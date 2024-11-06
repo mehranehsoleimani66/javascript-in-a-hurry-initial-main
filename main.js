@@ -43,11 +43,12 @@ document
     }
   });
 
-let localTime = new Date();
-
-document.querySelector("span[data-time=hours]").innerHTML =
-  localTime.getHours();
-document.querySelector("span[data-time=minutes]").innerHTML =
-  localTime.getMinutes();
-document.querySelector("span[data-time=seconds]").innerHTML =
-  localTime.getSeconds();
+setInterval(function () {
+  let localTime = new Date();
+  document.querySelector("span[data-time=hours]").innerHTML =
+    localTime.getHours();
+  document.querySelector("span[data-time=minutes]").innerHTML =
+    localTime.getMinutes();
+  document.querySelector("span[data-time=seconds]").innerHTML =
+    localTime.getSeconds();
+}, 1000);
