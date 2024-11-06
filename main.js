@@ -45,10 +45,16 @@ document
 
 setInterval(function () {
   let localTime = new Date();
-  document.querySelector("span[data-time=hours]").innerHTML =
-    localTime.getHours();
-  document.querySelector("span[data-time=minutes]").innerHTML =
-    localTime.getMinutes();
-  document.querySelector("span[data-time=seconds]").innerHTML =
-    localTime.getSeconds();
+  document.querySelector("span[data-time=hours]").innerHTML = localTime
+    .getHours()
+    .toString()
+    .padStart(2, "0");
+  document.querySelector("span[data-time=minutes]").innerHTML = localTime
+    .getMinutes()
+    .toString()
+    .padStart(2, "0");
+  document.querySelector("span[data-time=seconds]").innerHTML = localTime
+    .getSeconds()
+    .toString()
+    .padStart(2, "0");
 }, 1000);
