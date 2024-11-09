@@ -58,3 +58,43 @@ setInterval(function () {
     .toString()
     .padStart(2, "0");
 }, 1000);
+
+{
+  /* <img
+            src="./assets/gallery/image1.jpg"
+            alt="Thumbnail Image 1"
+            data-array-index="0"
+            data-selected="true"
+          />
+          <img
+            src="./assets/gallery/image2.jpg"
+            alt="Thumbnail Image 2"
+            data-array-index="1"
+            data-selected="false"
+          />
+          <img
+            src="./assets/gallery/image3.jpg"
+            alt="Thumbnail Image 3"
+            data-array-index="2"
+            data-selected="false"
+          /> */
+}
+const galleryImages = [
+  { src: "./assets/gallery/image1.jpg", alt: "Thumbnail Image 1" },
+  { src: "./assets/gallery/image2.jpg", alt: "Thumbnail Image 2" },
+  { src: "./assets/gallery/image3.jpg", alt: "Thumbnail Image 3" },
+];
+let imgGallery = document.querySelector("#gallery > img");
+let thumbnailsImage = document.querySelector("#gallery .thumbnails");
+console.log(imgGallery);
+imgGallery.src = galleryImages[0].src;
+imgGallery.alt = galleryImages[0].alt;
+
+galleryImages.forEach(function (item, index) {
+  let thumb = document.createElement("img");
+  thumb.src = item.src;
+  thumb.alt = item.alt;
+  thumb.dataset.arrayIndex = index;
+  thumb.dataset.selected = false;
+  thumbnailsImage.appendChild(thumb);
+});
